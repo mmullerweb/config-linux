@@ -15,29 +15,26 @@ FALSE "IMPRESSORA SAMSUNG")
 
 
 if [ "$choice" == "LAMP FULL" ]; then
-	./lamp.sh | tee >(zenity --progress --auto-close --pulsate)
-#	echo $?
-	if [ "$?" == "0" ]; then
-		zenity --info --text="LAMP FULL instalado!!!"
-		./gerenciador.sh
-	fi;
+	cd scripts
+        ./lamp.sh | tee >(zenity --progress --auto-close --pulsate)
+	zenity --info --text="LAMP FULL instalado!!!"
+        cd ..
+	./gerenciador.sh
 fi;
 
 
 if [ "$choice" == "KEYBOARD ABNT2" ]; then
+        cd scripts
         ./keyboard-abnt2.sh | tee >(zenity --progress --auto-close --pulsate)
-#       echo $?
-        if [ "$?" == "0" ]; then
-		zenity --info --text="KEYBOARD ABNT2 configurado!!!"
-                ./gerenciador.sh
-        fi;
+	zenity --info --text="KEYBOARD ABNT2 configurado!!!"
+        cd ..
+        ./gerenciador.sh
 fi;
 
 if [ "$choice" == "IMPRESSORA SAMSUNG" ]; then
+        cd scripts
         ./printer-samsung.sh | tee >(zenity --progress --auto-close --pulsate)
-#       echo $?
-        if [ "$?" == "0" ]; then
-                zenity --info --text="IMPRESSORA SAMSUNG configurada!!!"
-                ./gerenciador.sh
-        fi;
+        zenity --info --text="IMPRESSORA SAMSUNG configurada!!!"
+        cd ..
+        ./gerenciador.sh
 fi;
