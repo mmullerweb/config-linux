@@ -25,7 +25,7 @@ yes '' | sudo apt-get install php5.6
 yes '' | sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
 #### Instalando PHPMYADMIN
 #sudo apt-get install libapache2-mod-php5
-yes '' | sudo apt-get install phpmyadmin
+sudo apt-get install phpmyadmin
 #### Mais um BUG idiota do PHPMYADMIN
 sudo mv /usr/share/php/php-gettext/ /usr/share/php/php-gettext.old/
 sudo mv /usr/share/php/php-php-gettext/ /usr/share/php/php-gettext/
